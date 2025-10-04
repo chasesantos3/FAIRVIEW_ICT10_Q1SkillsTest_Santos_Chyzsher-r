@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chicken Wings Order Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #ffd6e8;
+      text-align: center;
+      margin-top: 40px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(255, 150, 200, 0.4);
+    }
+    label, select {
+      display: block;
+      margin: 10px auto;
+      font-size: 16px;
+      color: #333;
+    }
+    input {
+      padding: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 200px;
+      text-align: center;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍗 Chicken Wings Ordering Form</h1>
+  <form id="orderForm">
+    <label>Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Flavor:</label>
+    <select id="flavor">
+      <option value="150">Buffalo - ₱150</option>
+      <option value="160">Honey Garlic - ₱160</option>
+      <option value="170">Korean Soy - ₱170</option>
+      <option value="180">Garlic Parmesan - ₱180</option>
+    </select>
+
+    <label>Sauce:</label>
+    <select id="sauce">
+      <option value="20">Ranch - ₱20</option>
+      <option value="25">Blue Cheese - ₱25</option>
+      <option value="15">Barbecue - ₱15</option>
+    </select>
+
+    <label>Drinks:</label>
+    <select id="drink">
+      <option value="30">Coke - ₱30</option>
+      <option value="35">Iced Tea - ₱35</option>
+      <option value="25">Water - ₱25</option>
+    </select>
+
+    <br>
+    <button type="button" onclick="submitOrder()">Submit Order</button>
+  </form>
+
+  <script>
+    function submitOrder() {
+      let name = document.getElementById('name').value;
+      let flavor = parseFloat(document.getElementById('flavor').value);
+      let sauce = parseFloat(document.getElementById('sauce').value);
+      let drink = parseFloat(document.getElementById('drink').value);
+      let total = flavor + sauce + drink;
+
+      alert("Order completed! " + name + ", your total is ₱" + total.toFixed(2));
+    }
+  </script>
+</body>
+</html>
